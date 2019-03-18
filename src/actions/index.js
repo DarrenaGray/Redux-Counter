@@ -13,7 +13,7 @@ export const increment = (count) => {
   // Fill in this function
   return {
     type: INCREMENT,
-    payload: count +1
+    payload: count
   }
 };
 
@@ -21,6 +21,6 @@ export const decrement = (count) => {
   // Fill in this function
   return {
     type: DECREMENT,
-    payload: count -1
+    payload: count
   }
-};
+}
