@@ -6,14 +6,21 @@ class Counter extends Component {
     incrementIfOdd = (e) => {
         // Stretch Problem: Implement an increment function that
         // only increments if the counter value is odd
-        console.log('Odd Increments')
+        console.log('Odd Increments detected')
         e.preventDefault();
         this.props.incrementOdd(this.props.count)
+        console.log()
     };
 
-    incrementAsync = () => {
+    incrementAsync = e => {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
+        console.log('Async detected', this.props.count)
+        e.preventDefault();
+        setTimeout(() => {
+            this.props.increment(this.props.count)
+            console.log('Async success', this.props.count)
+        }, 1000);
     };
 
     incCount = e => {
@@ -46,9 +53,9 @@ class Counter extends Component {
                 <button onClick={this.incrementIfOdd}>
                     Increment if odd
                 </button>
-                {/*<button onClick={this.incrementAsync}>
+                <button onClick={this.incrementAsync}>
                     Increment async
-                </button>  */}
+                </button> 
             </p>
         );
     }
